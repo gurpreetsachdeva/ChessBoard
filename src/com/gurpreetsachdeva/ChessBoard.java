@@ -19,7 +19,7 @@ public class ChessBoard {
 		//After any move the new position seems identical
 		if (startRow<0 || startRow>3) return 0;
 		if (startCol<0 || startCol>3) return 0;
-		System.out.println("Test"+prob[0][0]);
+		//System.out.println("Test"+prob[0][0]);
 		if (moves<=1)
 		{
 			return prob[startRow][startCol];
@@ -46,6 +46,7 @@ public class ChessBoard {
 
 		int startRow = 0;
 		int startCol = 0;
-		System.out.println(cb.calculate(startRow, startCol, 1));
+		System.out.println(cb.calculate(startRow, startCol, 3));
+		System.out.println(cb.calculate(startRow, startCol, 2));
 	}
 }
