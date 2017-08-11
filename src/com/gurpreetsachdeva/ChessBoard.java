@@ -4,14 +4,14 @@ public class ChessBoard {
 
 	// Used Symmetery to calculate and replicate.
 
-	int[][] prob = new int[][] {    { 1 / 4, 3 / 8, 3 / 8, 1 / 4 },
-									{ 3 / 8, 1 / 2, 1 / 2, 3 / 8 },
-									{ 3 / 8, 1 / 2, 1 / 2, 3 / 8 },
-									{ 1 / 4, 3 / 8, 3 / 8, 1 / 4 } };
+	double[][] prob = new double[][] {    { 0.25, 0.375, 0.375, 0.25 },
+									{ 0.375, 0.5, 0.5, 0.375 },
+									{ 0.375, 0.5, 0.5, 0.375 },
+									{ 0.25, 0.375, 0.375, 0.25 } };
 
 	// Imagine a board with row indexes as 0 to 7 , column indexes 0 to 7;
 
-	public int calculate(int startRow,int startCol,int moves) {
+	public double calculate(int startRow,int startCol,int moves) {
 		
 		//Due to symmetery
 		//(0,0)>{(2,1),(2,1)}
@@ -19,6 +19,7 @@ public class ChessBoard {
 		//After any move the new position seems identical
 		if (startRow<0 || startRow>3) return 0;
 		if (startCol<0 || startCol>3) return 0;
+		System.out.println("Test"+prob[0][0]);
 		if (moves<=1)
 		{
 			return prob[startRow][startCol];
@@ -45,6 +46,6 @@ public class ChessBoard {
 
 		int startRow = 0;
 		int startCol = 0;
-		System.out.println(cb.calculate(startRow, startCol, 5));
+		System.out.println(cb.calculate(startRow, startCol, 1));
 	}
 }
